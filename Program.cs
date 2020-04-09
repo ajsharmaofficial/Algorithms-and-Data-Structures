@@ -6,14 +6,14 @@ namespace SortingAlgorithms
     {
         static void Main(string[] args)
         {
-            int[] data = new int[] { 12, 32, 21, 23, 21, 45 };
+            
             Console.WriteLine(" **************** Selection Sort ***************** ");
-            var result = new SortingMethods(data).SelectionSort();
+            var result = new SortingMethods(new int[] { 12, 32, 21, 23, 21, 45 }).SelectionSort();
             
             ShowResult(result);
+
             Console.WriteLine(" **************** Bubble Sort ***************** ");
-            int[] data2 = new int[] { 12, 32, 21, 23, 21, 45 };
-            result = new SortingMethods(data2).BubbleSort();
+            result = new SortingMethods(new int[] { 12, 32, 21, 23, 21, 45 }).BubbleSort();
             ShowResult(result);
         }
 

@@ -80,33 +80,25 @@ namespace SortingAlgorithms
 
         public int[] InsertionSort()
         {
-            for (int i = data.Length - 2; i >= 0; i--)
+            for (int i = 1; i<data.Length; i++)
             {
-
-                for (int j = 0; j < i; j++)
+                int j;
+                var temp = data[i];
+                for (j = i-1; j>=0 && data[j]>temp; j--)
                 {
-                    if (data[j] > data[j + 1])
-                    {
-                        var temp = data[j];
-                        data[j] = data[j + 1];
-                        data[j + 1] = temp;
-                        swapcount++;
-                    }
-
+                        
+                        data[j+1] = data[j];
+                        
                 }
-                Console.Write("  Pass " + (i + 1) + " ");
+                data[j + 1] = temp;
+                Console.Write("  Step " + (i) + " ");
                 foreach (var item in data)
                 {
                     Console.Write(item + " ");
                 }
                 Console.WriteLine();
-                if (swapcount == 0)
-                {
-                    break;
-                }
+              
             }
-            Console.WriteLine();
-            Console.WriteLine(" Total Swap Performed " + swapcount);
             Console.WriteLine();
             return data;
         }

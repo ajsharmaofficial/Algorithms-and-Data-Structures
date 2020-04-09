@@ -15,6 +15,10 @@ namespace SortingAlgorithms
             Console.WriteLine(" **************** Bubble Sort ***************** ");
             result = new SortingMethods(new int[] { 12, 32, 21, 23, 21, 45 }).BubbleSort();
             ShowResult(result);
+
+            Console.WriteLine(" **************** Insertion Sort ***************** ");
+            result = new SortingMethods(new int[] { 12, 32, 21, 23, 21, 45 }).InsertionSort();
+            ShowResult(result);
         }
 
         private static void ShowResult(int [] result)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SortingAlgorithms.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -100,6 +101,19 @@ namespace SortingAlgorithms
               
             }
             Console.WriteLine();
+            return data;
+        }
+
+        public int[] BinaryTreeSort()
+        {
+            var bst = new BinaryTree();
+            foreach (var item in data)
+            {
+                var node = new TreeNode(item);
+                bst.InsertNode(node);
+
+            }
+            data = bst.TraverseInorder(data.Length);
             return data;
         }
     }

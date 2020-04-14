@@ -19,6 +19,10 @@ namespace SortingAlgorithms
             Console.WriteLine(" **************** Insertion Sort ***************** ");
             result = new SortingMethods(new int[] { 12, 32, 21, 23, 21, 45 }).InsertionSort();
             ShowResult(result);
+
+            Console.WriteLine(" **************** Binary Tree Sort ***************** ");
+            result = new SortingMethods(new int[] { 12, 32, 21, 23, 21, 45 }).BinaryTreeSort();
+            ShowResult(result);
         }
 
         private static void ShowResult(int [] result)

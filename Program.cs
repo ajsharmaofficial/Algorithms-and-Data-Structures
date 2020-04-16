@@ -23,6 +23,10 @@ namespace SortingAlgorithms
             Console.WriteLine(" **************** Binary Tree Sort ***************** ");
             result = new SortingMethods(new int[] { 12, 32, 21, 23, 21, 45 }).BinaryTreeSort();
             ShowResult(result);
+
+            Console.WriteLine(" **************** Heap Sort ***************** ");
+            result = new SortingMethods(new int[] { 12, 32, 21, 23, 21, 45 }).HeapSort();
+            ShowResult(result);
         }
 
         private static void ShowResult(int [] result)

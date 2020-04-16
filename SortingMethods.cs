@@ -116,5 +116,74 @@ namespace SortingAlgorithms
             data = bst.TraverseInorder(data.Length);
             return data;
         }
+
+        public int[] HeapSort()
+        {
+            // as the array follows the zero based index therefore leftchild will be at
+            // left child at (2*i)+1
+            // right child at (2*i)+2
+            for(int i =data.Length-1; i>=0;i--)
+            {
+                Heapify(i,data.Length);
+            }
+
+            for (int i = data.Length-1; i>=0; i--)
+            {
+                Swap(0, i);
+                Heapify(0,i);
+            }
+            return data;
+        }
+
+        private void Heapify(int v,int size)
+        {
+            var left = (2 * v) + 1;
+            var right = (2 * v) + 2;
+            if(left>=size)
+            {
+                return;
+            }
+            var largest = v;
+            if(data[largest]<data[left]  && right< size && data[largest] < data[right])
+            {
+                if (data[left] > data[right])
+                {
+                    largest = left;
+                }
+                else
+                {
+                    largest = right;
+                }
+            }
+            else if (data[largest] < data[left])
+            {
+                largest = left;
+
+            }
+            else if(right < size && data[largest] < data[right])
+            {
+                largest = right;
+            }
+            if(v!=largest)
+            {
+                Swap(v, largest);
+                Heapify(largest,size);
+            }
+           
+            
+            
+        }
+
+        /// <summary>
+        /// swaps the element at index i and index k
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="k"></param>
+        void Swap(int i, int k)
+        {
+            var temp = data[i];
+            data[i] = data[k];
+            data[k] = temp;
+        }
     }
 }
